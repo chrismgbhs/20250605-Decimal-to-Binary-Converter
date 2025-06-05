@@ -46,7 +46,17 @@ namespace _20250605
                 }
             }
 
-            if (boolStack.Count > 8)
+            if (boolStack.Count > 32)
+            {
+                numBits = 64;
+            }
+
+            else if (boolStack.Count > 16) 
+            {
+                numBits = 32;
+            }
+
+            else if (boolStack.Count > 8)
             {
                 numBits = 16;
             }
@@ -55,6 +65,8 @@ namespace _20250605
             {
                 numBits = 8;
             }
+
+
 
             Console.WriteLine($"MAX DECIMAL: {maximumDecimal}");
             Console.WriteLine($"FULL BIT RANGE: {numBits}");
@@ -135,9 +147,7 @@ namespace _20250605
             }
 
             Console.WriteLine();
-            Console.ReadKey();
-
-             
+            Console.ReadKey();     
         }
     }
 }
